@@ -8,9 +8,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background-color: #eceff1">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+      	<div class="row" style="margin-bottom: 5px;">
+	  		<div class="col s12 m12 l12 valign-wrapper" style="height: 10vh;background-color: #37474f;">
+	  			<span class="col s6 m6 l3 blue-grey-text text-lighten-5 valign flow-text">Superiiens</span>
+	  			<span class="col s0 m0 l6 blue-grey-text text-lighten-5"></span>
+	  			<span class="col s6 m6 l2 blue-grey-text text-lighten-5 right-align"><a class="flow-text" href="#" style="color: #eceff1">Profil</a></span>
+	  		</div>
+  		</div>
+  		<div class="col s12 m12 l12" style="background-color: #263238;height: 5px"></div>
     <%= yield %>
   </body>
 </html>
