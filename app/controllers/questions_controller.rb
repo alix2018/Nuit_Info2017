@@ -11,11 +11,14 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @users=User.all
+    @question = Question.find(params[:id])
   end
 
   # GET /questions/new
   def new
     @question = Question.new
+
   end
 
   # GET /questions/1/edit
@@ -26,7 +29,8 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-
+    @question.user = current_user
+    byebug
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
@@ -70,6 +74,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.fetch(:question, {})
+      params.require(:question).permit(:title, :contents)
     end
 end
