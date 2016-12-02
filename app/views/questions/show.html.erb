@@ -1,4 +1,43 @@
+<!-- <div class="container">
 <p id="notice"><%= notice %></p>
 
+<h1><%= @question.title %></h1>
+<p><%= @question.contents %></p>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+</div> -->
+
+<div class="row">
+    <div class="offset-s2 offset-m2 col s8 m8">
+      <div class="card white z-depth-4">
+        <div class="card-content">
+          <div class="center-align card-title">
+            <span style="Font-Weight: Bold;"><%= @question.title %></span>
+          </div>
+          <p><%= @question.contents %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:40px;">
+    <div class="offset-s4 offset-m4 col s6 m6">
+      <div class="card white z-depth-4">
+        <div class="card-content">
+          <p>T'as pas de chance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <form class="offset-s4 offset-m4 col s6 m6">
+      <div class="row">
+        <div class="input-field right-align">
+          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">Répondre</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

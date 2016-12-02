@@ -1,25 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Questions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<div class="row">
+  <div class="col s2"></div>
+  <div class="col s8">
+    <h3>Questions pouvant vous concerner :</h3><hr/>
   <tbody>
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+       <div class="collection">
+          <a href="#!" class="collection-item truncate blue-grey-text">
+            <div style="Font-Weight: Bold;">
+                <%= question.title%></div>
+                <div class="col s1"></div>
+            <div class="container col s11">
+            <span class="black-text truncate"><%= question.contents%></span>
+          </div>
+        </a>
+      </div>
+    <%= link_to 'Show', question %></td>
+    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+    <%= link_to 'New Question', new_question_path %>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Question', new_question_path %>
