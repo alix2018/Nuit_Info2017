@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :questions
   has_many :answers
-  belongs_to :association
+  belongs_to :asso, :class_name => 'Association', :foreign_key => 'association_id'
 end
