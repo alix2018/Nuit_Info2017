@@ -5,6 +5,7 @@
 <p><%= @question.contents %></p>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+<<<<<<< HEAD
 </div> -->
 
 <div class="row">
@@ -41,3 +42,21 @@
     </form>
   </div>
 </div>
+<% @question.answers.each do |message| %>
+      <tr>
+        <td><div class="col s12 m12 l12"><h5><%= message.contents %></h5></div></td>
+      </tr>
+    <% end %>
+
+<%= form_tag({controller: "questions", action: "post_answer"}, method: "post") do %> 
+  <input value=<%= @question.id %> name="question_id" visibility="hidden" ></input>
+  <div class="col s12 m12 l12">
+  	Répondez à cette question : 
+  </div>
+  <div class="col s12 m12 l12">
+    <%= text_field_tag(:contents) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

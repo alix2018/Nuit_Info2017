@@ -42,6 +42,13 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def post_answer
+    answer=Answer.new(params[:answer])
+    if answer.save
+      redirect_to @question
+    end  
+  end
+
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
@@ -76,4 +83,9 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:title, :contents)
     end
+
+    def answer_params
+      params.permit(:contents, :question_id)
+    end
+
 end

@@ -1,4 +1,5 @@
-      <div class="row">
+     <div class="col s12 m12 l12" style="height: 80vh"> 
+      <div class="row" style="margin-bottom: 20vh">
         <div class="col s6 m6">
           <div class="collection">
             <a href="#!" class="collection-item "><span class="blue-grey-text">Question 1</span></a>
@@ -28,8 +29,12 @@
             </div>
           </div>
       </div>
-      <div class="container">
-      <div id="map" class="map"></div></div>
+      <div id="redirection" class="center-align col s12 m12 l12"><i class="large material-icons">trending_down</i>
+      </div>
+      </div>
+
+      <div id="map" class="map"><div class="center-align" id="redirection2" style="height: 15vh;z-index: 8796"><i class="large material-icons">trending_up</i></div></div>
+        
         <script type="text/javascript">
           var map = new ol.Map({
             target: 'map',
@@ -43,5 +48,13 @@
               zoom: 13
             })
           });
+          $(document).ready( function () {
+             $('#redirection').click(function() {
+               $('html,body').animate({scrollTop: $("#map").offset().top}, 'slow'      );
+             });  
+             $('#redirection2').click(function() {
+               $('html,body').animate({scrollTop: $("#monancre").offset().top}, 'slow'      );
+             }); 
+          })
         </script>
- 
+        
