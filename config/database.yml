@@ -87,5 +87,6 @@ test:
 production:
   <<: *default
   database: nuitinfo_production
-  username: nuitinfo
-  password: <%= ENV['NUITINFO_DATABASE_PASSWORD'] %>
+  username: postgres
+  password:
+  host: db
